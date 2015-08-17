@@ -39,11 +39,13 @@ function prompt_skwp_setup {
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     _prompt_skwp_colors=(
-      "%F{81}"  # Turquoise
+      "%F{87}"  # Turquoise
       "%F{166}" # Orange
       "%F{135}" # Purple
-      "%F{161}" # Hotpink
+      "%F{196}" # Red
       "%F{118}" # Limegreen
+      "%F{255}" # White
+      "%F{19}"  # blue
     )
   else
     _prompt_skwp_colors=(
@@ -52,24 +54,26 @@ function prompt_skwp_setup {
       "%F{magenta}"
       "%F{red}"
       "%F{green}"
+      "%F{white}"
+      "%F{blue}"
     )
   fi
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:branch' format "${_prompt_skwp_colors[1]}%b%f"
-  zstyle ':prezto:module:git:info:added' format "${_prompt_skwp_colors[5]}●%f"
-  zstyle ':prezto:module:git:info:deleted' format "${_prompt_skwp_colors[2]}●%f"
-  zstyle ':prezto:module:git:info:modified' format "${_prompt_skwp_colors[4]}●%f"
-  zstyle ':prezto:module:git:info:untracked' format "${_prompt_skwp_colors[3]}●%f"
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '(%b%d%a%m%u)'
+  zstyle ':prezto:module:git:info:branch' format "${_prompt_skwp_colors[7]}%b%f"
+  zstyle ':prezto:module:git:info:added' format "${_prompt_skwp_colors[5]}S%f"
+  zstyle ':prezto:module:git:info:deleted' format "${_prompt_skwp_colors[4]}D%f"
+  zstyle ':prezto:module:git:info:modified' format "${_prompt_skwp_colors[4]}%mM%f"
+  zstyle ':prezto:module:git:info:untracked' format "${_prompt_skwp_colors[6]}%uN%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' "%d%a%m%u ${_prompt_skwp_colors[6]}[%b]${_prompt_skwp_colors[6]}"
 
   # Set ruby-info parameters.
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
   # Define prompts.
-  PROMPT="${_prompt_skwp_colors[3]}%n%f@${_prompt_skwp_colors[2]}%m%f ${_prompt_skwp_colors[5]}%~%f "'${git_info:+${(e)git_info[prompt]}}'"$ "
-  RPROMPT='%F{blue}${ruby_info[version]}'
+  PROMPT="${_prompt_skwp_colors[7]}%n%f@${_prompt_skwp_colors[5]}%m%f ${_prompt_skwp_colors[4]}%~%f $ "
+  RPROMPT="${_prompt_skwp_colors[6]}${ruby_info[version]}"'${git_info:+${(e)git_info[prompt]}}'
 }
 
 prompt_skwp_setup "$@"

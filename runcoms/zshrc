@@ -11,3 +11,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+alias apt-get="sudo apt-get"
+alias upd="apt-get update"
+alias upg="apt-get upgrade"
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"

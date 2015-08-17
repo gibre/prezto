@@ -9,6 +9,10 @@
 # General
 #
 
+if [ -n "$DISPLAY" -a "$TERM" = "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 # Set case-sensitivity for completion, history lookup, etc.
 # zstyle ':prezto:*:*' case-sensitive 'yes'
 
@@ -25,6 +29,7 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
+  'git' \
   'terminal' \
   'editor' \
   'history' \
@@ -32,6 +37,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'tmux' \
+  'syntax-highlighting' \
   'prompt'
 
 #
@@ -82,10 +89,11 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Prompt
 #
 
+
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'skwp'
 
 #
 # Ruby
@@ -117,12 +125,12 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
+ zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'cursor' \
+   'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
