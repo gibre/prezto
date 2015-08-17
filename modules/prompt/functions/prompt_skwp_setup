@@ -45,7 +45,7 @@ function prompt_skwp_setup {
       "%F{196}" # Red
       "%F{118}" # Limegreen
       "%F{255}" # White
-      "%F{19}"  # blue
+      "%F{27}"  # blue
     )
   else
     _prompt_skwp_colors=(
