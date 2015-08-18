@@ -61,18 +61,19 @@ function prompt_skwp_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:remote' format "${_prompt_skwp_colors[6]}%R%f"
   zstyle ':prezto:module:git:info:branch' format "${_prompt_skwp_colors[7]}%b%f"
   zstyle ':prezto:module:git:info:added' format "${_prompt_skwp_colors[5]}S%f"
   zstyle ':prezto:module:git:info:deleted' format "${_prompt_skwp_colors[4]}D%f"
   zstyle ':prezto:module:git:info:modified' format "${_prompt_skwp_colors[4]}%mM%f"
   zstyle ':prezto:module:git:info:untracked' format "${_prompt_skwp_colors[6]}%uN%f"
-  zstyle ':prezto:module:git:info:keys' format 'prompt' "%d%a%m%u ${_prompt_skwp_colors[6]}[%b]${_prompt_skwp_colors[6]}"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' "%d%a%m%u ${_prompt_skwp_colors[6]}[%b:%R]${_prompt_skwp_colors[6]}"
 
   # Set ruby-info parameters.
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
   # Define prompts.
-  PROMPT="${_prompt_skwp_colors[7]}%n%f@${_prompt_skwp_colors[5]}%m%f ${_prompt_skwp_colors[4]}%~%f $ "
+  PROMPT="${_prompt_skwp_colors[7]}%n%f@${_prompt_skwp_colors[5]}%m%f ${_prompt_skwp_colors[4]}%2~%f $ "
   RPROMPT="${_prompt_skwp_colors[6]}${ruby_info[version]}"'${git_info:+${(e)git_info[prompt]}}'
 }
 

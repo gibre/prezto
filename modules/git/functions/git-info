@@ -237,7 +237,7 @@ function git-info {
   if [[ -n "$branch" && -n "$remote_format" ]]; then
     # Gets the remote name.
     remote_cmd='git rev-parse --symbolic-full-name --verify HEAD@{upstream}'
-    remote="${$(${(z)remote_cmd} 2> /dev/null)##refs/remotes/}"
+    remote="${$(${(z)remote_cmd} 2> /dev/null)##refs/remotes/origin/}"
     if [[ -n "$remote" ]]; then
       zformat -f remote_formatted "$remote_format" "R:$remote"
     fi
