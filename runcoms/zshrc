@@ -18,3 +18,5 @@ alias upd="apt-get update"
 alias upg="apt-get upgrade"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
