@@ -39,7 +39,8 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'tmux' \
   'syntax-highlighting' \
-  'prompt'
+  'prompt' \
+  'python'
 
 #
 # Editor
