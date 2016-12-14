@@ -13,12 +13,11 @@ fi
 # Customize to your needs...
 
 alias svim="sudo vim"
-alias apt-get="sudo apt-get"
-alias upd="apt-get update"
-alias upg="apt-get upgrade"
+alias apt="sudo apt"
+alias upd="apt update"
+alias upg="apt upgrade"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
 alias neovim='NVIM_TUI_ENABLE_TRUE_COLOR=1 konsole --hide-menubar --hide-tabbar -e nvim'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-eval "$(pyenv virtualenv-init -)"
